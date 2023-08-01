@@ -13,7 +13,7 @@ import { env } from '../utils';
 
 export function initializeFaro(): Faro {
   const faro = coreInit({
-    url: `http://localhost:${env.faro.portAppReceiver}/collect`,
+    url: `${env.faro.otplEndpoint}`,
     apiKey: env.faro.apiKey,
     instrumentations: [
       ...getWebInstrumentations({

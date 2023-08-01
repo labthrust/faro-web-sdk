@@ -15,7 +15,7 @@ export function getEnvConfig(vars: Record<string, string | undefined>, nodeEnv?:
     faro: {
       apiKey: vars['AGENT_KEY_APP_RECEIVER']!,
       host: vars['DEMO_SERVER_AGENT_HOST']! || vars['AGENT_HOST']!,
-      portAppReceiver: vars['AGENT_PORT_APP_RECEIVER']!,
+      otplEndpoint: vars['OTPL_ENDPOINT']!,
       portTraces: vars['TEMPO_PORT_OTLP_RECEIVER']!,
     },
     client: {
