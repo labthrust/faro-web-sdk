@@ -15,3 +15,5 @@ export { Login } from './Login';
 export { Register } from './Register';
 
 export { Seed } from './Seed';
+
+export { Ready } from './ready';
