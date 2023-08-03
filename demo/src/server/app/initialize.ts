@@ -24,7 +24,6 @@ export async function initializeApp(): Promise<Express> {
       await app.listen(Number(env.server.port), '0.0.0.0');
 
       logger.info(`App is running at: http://localhost:${env.server.port}`);
-      logger.info(`Grafana is running at: http://localhost:${env.grafana.port}`);
     } catch (err) {
       logger.error(err);
     }

@@ -13,30 +13,23 @@ export function getEnvConfig(vars: Record<string, string | undefined>, nodeEnv?:
 
   return {
     faro: {
-      apiKey: vars['AGENT_KEY_APP_RECEIVER']!,
-      host: vars['DEMO_SERVER_AGENT_HOST']! || vars['AGENT_HOST']!,
-      otplEndpoint: vars['OTPL_ENDPOINT']!,
-      portTraces: vars['TEMPO_PORT_OTLP_RECEIVER']!,
+      otlpEndpointPublic: vars['OTLP_ENDPOINT_PUBLIC']!,
+      otlpEndpointPrivate: vars['OTLP_ENDPOINT_PRIVATE']!,
     },
     client: {
       packageName: vars['DEMO_CLIENT_PACKAGE_NAME']!,
     },
     database: {
-      host: vars['DEMO_SERVER_DATABASE_HOST']! || vars['DATABASE_HOST']!,
+      host: vars['DATABASE_HOST']!,
       name: vars['DATABASE_NAME']!,
       password: vars['DATABASE_PASSWORD']!,
       port: vars['DATABASE_PORT']!,
       user: vars['DATABASE_USER']!,
     },
-    grafana: {
-      port: vars['GRAFANA_PORT']!,
-    },
     package: {
       version: vars['DEMO_PACKAGE_VERSION']!,
     },
     server: {
-      logsPath: vars['DEMO_SERVER_LOGS_PATH']!,
-      logsName: vars['DEMO_SERVER_LOGS_NAME']!,
       packageName: vars['DEMO_SERVER_PACKAGE_NAME']!,
       port: vars['DEMO_PORT']!,
     },

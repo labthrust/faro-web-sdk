@@ -1,7 +1,7 @@
 import { format, transports, createLogger as winstonCreateLogger } from 'winston';
 import type { Logger } from 'winston';
 
-import { env, toAbsolutePath } from '../utils';
+import { env } from '../utils';
 
 import { setLogger } from './logger';
 
@@ -19,13 +19,6 @@ export function initializeLogger(): Logger {
         format: format.prettyPrint({
           colorize: true,
         }),
-      }),
-      new transports.File({
-        filename: toAbsolutePath(`${env.server.logsPath}/${env.server.logsName}`),
-        format: format.json(),
-        options: {
-          flags: 'w',
-        },
       }),
     ],
   });
