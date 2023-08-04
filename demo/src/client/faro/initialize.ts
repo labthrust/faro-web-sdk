@@ -13,7 +13,7 @@ import { env } from '../utils';
 
 export function initializeFaro(): Faro {
   const faro = coreInit({
-    url: `${env.faro.otlpEndpoint}`,
+    url: `${env.faro.otlpEndpointPublic}`,
     instrumentations: [
       ...getWebInstrumentations({
         captureConsole: true,

@@ -28,7 +28,7 @@ const provider = new NodeTracerProvider({
 provider.addSpanProcessor(
   new BatchSpanProcessor(
     new OTLPTraceExporter({
-      url: `${env.faro.otlpEndpoint}`,
+      url: `${env.faro.otlpEndpointPrivate}`,
     })
   )
 );
